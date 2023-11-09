@@ -58,6 +58,8 @@
     let table = ["", "", "", "", "", "", "", "", "",]
 
     function toMark(i) {
+        if(table[i]!= "")
+        return
         table[i] = player
         if (player == "X") {
             player = "O"
