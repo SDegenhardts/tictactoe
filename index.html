@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 3%;
+            font-size: 6em;
+            background-color: black;
+        }
+
+        td {
+            background-color: darkcyan;
+            border: solid 1px;
+            border-color: black;
+            text-align: center;
+            width: 2em;
+            height: 2em;
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: cadetblue;
+            transition: 0.5;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+</head>
+
+<body>
+    <main>
+        <table>
+            <tr>
+                <td onclick="toMark(0)"></td>
+                <td onclick="toMark(1)"></td>
+                <td onclick="toMark(2)"></td>
+            </tr>
+            <tr>
+                <td onclick="toMark(3)"></td>
+                <td onclick="toMark(4)"></td>
+                <td onclick="toMark(5)"></td>
+            </tr>
+            <tr>
+                <td onclick="toMark(6)"></td>
+                <td onclick="toMark(7)"></td>
+                <td onclick="toMark(8)"></td>
+            </tr>
+        </table>
+    </main>
+</body>
+<script>
+
+    let jogador = "X"
+    let table = ["", "", "", "", "", "", "", "", "",]
+
+    function toMark(i) {
+        table[i] = jogador
+        if (jogador == "X") {
+            jogador = "O"
+        }
+        else {
+            jogador = "X"
+        }
+        render()
+    }
+
+    function render() {
+
+        let blocks = document.querySelectorAll("td")
+        let i = 0
+
+        for (let i = 0; i < 9; i++) {
+            blocks[i].innerHTML = table[i]
+        }
+    }
+    console.log()
+</script>
+
+</html>
