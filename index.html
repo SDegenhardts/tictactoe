@@ -54,16 +54,16 @@
 </body>
 <script>
 
-    let jogador = "X"
+    let player = "X"
     let table = ["", "", "", "", "", "", "", "", "",]
 
     function toMark(i) {
-        table[i] = jogador
-        if (jogador == "X") {
-            jogador = "O"
+        table[i] = player
+        if (player == "X") {
+            player = "O"
         }
         else {
-            jogador = "X"
+            player = "X"
         }
         render()
     }
@@ -77,7 +77,7 @@
             blocks[i].innerHTML = table[i]
         }
     }
-    console.log()
+    
 </script>
 
 </html>
